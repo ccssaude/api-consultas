@@ -22,8 +22,35 @@ public class vagaModel implements Serializable {
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
+    public UUID getId() {
+        return id;
+    }
 
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
+    public Boolean getQuantidade() {
+        return quantidade;
+    }
 
+    public void setQuantidade(Boolean quantidade) {
+        this.quantidade = quantidade;
+    }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDateTime registrationDate) {
+        this.registrationDate = registrationDate;
+    }
 }
