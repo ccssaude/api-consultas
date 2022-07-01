@@ -24,6 +24,10 @@ public class ConsultaModel implements Serializable {
     @JoinColumn(name = "paciente_id")
     private PacienteModel pacienteModel;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vaga_id")
+    private VagaModel vagaModel;
+
     public UUID getId() {
         return id;
     }
