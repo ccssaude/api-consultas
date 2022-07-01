@@ -6,6 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ConsultaService {
@@ -22,6 +24,9 @@ public class ConsultaService {
     @Transactional
     public Page<ConsultaModel> findAll (Pageable pageable){
         return consultaRepository.findAll(pageable);
+    }
+    public Optional<ConsultaModel> findById(UUID id){
+        return consultaRepository.findById(id);
     }
 
     @Transactional
