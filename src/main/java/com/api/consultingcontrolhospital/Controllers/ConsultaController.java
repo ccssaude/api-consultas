@@ -6,6 +6,10 @@ import com.api.consultingcontrolhospital.Models.ConsultaModel;
 import com.api.consultingcontrolhospital.Service.ConsultaService;
 import com.api.consultingcontrolhospital.Service.VagaService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +37,10 @@ public class ConsultaController {
         BeanUtils.copyProperties(consultaDto, consultaModel);
         consultaModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(consultaService.save(consultaModel));
+    }
+    @GetMapping
+    public ResponseEntity<Page<ConsultaModel>> getAllConsulta(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC)Pageable pageable){
+         return ResponseEntity.status(HttpStatus.OK).body(consultaService.findAll(pageable));
     }
 
 }
