@@ -8,8 +8,6 @@ import java.util.UUID;
 @Entity
 @Table(name="TB_CONSULTA")
 public class ConsultaModel implements Serializable {
-
-
     private static final long serialVersionUID =1L;
     @Id
     @Column(name = "consulta_id")
@@ -27,6 +25,10 @@ public class ConsultaModel implements Serializable {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vaga_id")
     private VagaModel vagaModel;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hospital_id")
+    private HospitalModel hospitalModel;
 
     public UUID getId() {
         return id;
