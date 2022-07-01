@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/marcar-consulta")
+@RequestMapping("/referencia/ccu-tracker/consulta")
+
 public class ConsultaController {
+
 }
