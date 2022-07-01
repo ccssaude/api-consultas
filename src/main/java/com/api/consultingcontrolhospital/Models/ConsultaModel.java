@@ -22,7 +22,7 @@ public class ConsultaModel implements Serializable {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")
-    private PacienteModel;
+    private PacienteModel pacienteModel;
 
     public UUID getId() {
         return id;
