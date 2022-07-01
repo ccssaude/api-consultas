@@ -15,20 +15,23 @@ public class ConsultaModel implements Serializable {
     private UUID id;
     @Column(nullable = false, length = 25)
     private String nome;
+
+    @Column(nullable = false, length = 25)
+    private String tipo_consulta;
     @Column(nullable = false)
     private LocalDateTime registrationDate;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "paciente_id")
-    private PacienteModel pacienteModel;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "vaga_id")
-    private VagaModel vagaModel;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hospital_id")
-    private HospitalModel hospitalModel;
+//
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "paciente_id")
+//    private PacienteModel pacienteModel;
+//
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "vaga_id")
+//    private VagaModel vagaModel;
+//
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "hospital_id")
+//    private HospitalModel hospitalModel;
 
     public UUID getId() {
         return id;
@@ -44,6 +47,14 @@ public class ConsultaModel implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTipo_consulta() {
+        return tipo_consulta;
+    }
+
+    public void setTipo_consulta(String tipo_consulta) {
+        this.tipo_consulta = tipo_consulta;
     }
 
     public LocalDateTime getRegistrationDate() {
