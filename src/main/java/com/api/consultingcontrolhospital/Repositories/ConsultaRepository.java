@@ -8,7 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface ConsultaRepository extends JpaRepository<ConsultaModel, UUID> {
-    boolean existsByLicensePlateCar(String licensePlateCar);
-    boolean existsByParkingSpotNumber(String parkingSpotNumber);
 
 }

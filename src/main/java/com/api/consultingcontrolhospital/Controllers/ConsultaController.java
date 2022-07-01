@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -42,6 +44,15 @@ public class ConsultaController {
     public ResponseEntity<Page<ConsultaModel>> getAllConsulta(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC)Pageable pageable){
          return ResponseEntity.status(HttpStatus.OK).body(consultaService.findAll(pageable));
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getOneConsulta(@PathVariable(value = "id") UUID id){
+        Optional<ConsultaModel> consultaModelOptional = consultaService.findById(id);
+        if (!consultaModelOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Desculpa, consulta que procura não existe!");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(consultaModelOptional.get());
+    }
+//    @PutMapping("/{id}")
 
 }
 
