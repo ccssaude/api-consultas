@@ -47,7 +47,7 @@ public class ConsultaController {
     public ResponseEntity<Object> getOneConsulta(@PathVariable(value = "id") UUID id){
         Optional<ConsultaModel> consultaModelOptional = consultaService.findById(id);
         if (!consultaModelOptional.isPresent()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Desculpa, consulta que procura não existe!");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Desculpa, a consulta que procura não existe!");
         }
         return ResponseEntity.status(HttpStatus.OK).body(consultaModelOptional.get());
     }
