@@ -13,7 +13,7 @@ public class HospitalModel implements Serializable {
     @Column(name = "hospital_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 100)
     private String nome;
     @Column(nullable = false, length = 50)
     private Boolean vagas_dispo;

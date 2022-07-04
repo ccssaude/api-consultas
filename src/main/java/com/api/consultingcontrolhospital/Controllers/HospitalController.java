@@ -1,11 +1,8 @@
 package com.api.consultingcontrolhospital.Controllers;
 
 import com.api.consultingcontrolhospital.Dtos.HospitalDto;
-import com.api.consultingcontrolhospital.Dtos.PacienteDto;
 import com.api.consultingcontrolhospital.Models.HospitalModel;
-import com.api.consultingcontrolhospital.Models.PacienteModel;
 import com.api.consultingcontrolhospital.Service.HospitalService;
-import com.api.consultingcontrolhospital.Service.PacienteService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -28,7 +25,6 @@ import java.util.UUID;
 public class HospitalController {
 
     final HospitalService hospitalService;
-
     public HospitalController(HospitalService hospitalService){
         this.hospitalService = hospitalService;
     }

@@ -1,4 +1,4 @@
-package com.api.parkingcontrol.configurations;
+package com.api.consultingcontrolhospital.Configurations;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

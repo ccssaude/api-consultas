@@ -51,7 +51,5 @@ public class ConsultaController {
         }
         return ResponseEntity.status(HttpStatus.OK).body(consultaModelOptional.get());
     }
-
-
 }
 
