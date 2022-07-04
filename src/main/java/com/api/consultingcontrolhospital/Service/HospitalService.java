@@ -1,5 +1,6 @@
 package com.api.consultingcontrolhospital.Service;
 import com.api.consultingcontrolhospital.Models.HospitalModel;
+import com.api.consultingcontrolhospital.Repositories.ConsultaRepository;
 import com.api.consultingcontrolhospital.Repositories.HospitalRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,8 +14,8 @@ import java.util.UUID;
 public class HospitalService {
     final HospitalRepository hospitalRepository;
 
-    public HospitalService (HospitalRespository hospitalRespository){
-        this.hospitalRepository = hospitalRespository;
+    public HospitalService (HospitalRepository hospitalRepository){
+        this.hospitalRepository = hospitalRepository;
     }
     @Transactional
     public HospitalModel save(HospitalModel hospitalModel){
