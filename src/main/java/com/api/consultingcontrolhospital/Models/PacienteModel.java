@@ -34,6 +34,6 @@ public class PacienteModel implements Serializable {
     private HospitalModel hospital;
 
     @ManyToOne
-    private HospitalModel hospital;
+    private HospitalModel hospitall;
 
 }
