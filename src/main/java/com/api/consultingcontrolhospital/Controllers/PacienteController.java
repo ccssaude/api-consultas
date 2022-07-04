@@ -23,7 +23,7 @@ import java.util.UUID;
 @RequestMapping("/referencia/ccu-tracker/paciente")
 
 public class PacienteController {
-final PacienteService pacienteService;
+    final PacienteService pacienteService;
     public PacienteController(PacienteService pacienteService){
     this.pacienteService = pacienteService;
 }
