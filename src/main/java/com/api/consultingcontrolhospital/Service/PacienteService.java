@@ -1,6 +1,7 @@
 package com.api.consultingcontrolhospital.Service;
 
 
+import com.api.consultingcontrolhospital.Models.ConsultaModel;
 import com.api.consultingcontrolhospital.Models.PacienteModel;
 import com.api.consultingcontrolhospital.Repositories.PacienteRespository;
 import org.springframework.data.domain.Page;
@@ -8,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
+import java.util.UUID;
 
 
 @Service
@@ -22,8 +25,13 @@ public PacienteService (PacienteRespository pacienteRespository){
     public PacienteModel save(PacienteModel pacienteModel){
        return pacienteRespository.save(pacienteModel);
 }
-public Page<PacienteModel> findAll(Pageable pageable){
-    return pacienteRespository.findAll(pageable);
+    @Transactional
+    public Page<PacienteModel> findAll(Pageable pageable){
+        return pacienteRespository.findAll(pageable);
 }
+    public Optional<PacienteModel> findById(UUID id){
+        return pacienteRespository.findById(id);
+    }
+
 
 }
