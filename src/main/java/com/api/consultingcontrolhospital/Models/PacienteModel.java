@@ -3,6 +3,7 @@ package com.api.consultingcontrolhospital.Models;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -18,6 +19,13 @@ public class PacienteModel implements Serializable {
     private String telefone;
     @Column(nullable = false, length = 50)
     private String motivo_referencia;
+
+    @Column(nullable = false, length = 55)
+    private Date Data_consulta;
+
+    @Column(nullable = false, length = 55)
+    private Date Data_ref;
+
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
@@ -58,6 +66,22 @@ public class PacienteModel implements Serializable {
 
     public void setMotivo_referencia(String motivo_referencia) {
         this.motivo_referencia = motivo_referencia;
+    }
+
+    public Date getData_consulta() {
+        return Data_consulta;
+    }
+
+    public void setData_consulta(Date data_consulta) {
+        Data_consulta = data_consulta;
+    }
+
+    public Date getData_ref() {
+        return Data_ref;
+    }
+
+    public void setData_ref(Date data_ref) {
+        Data_ref = data_ref;
     }
 
     public LocalDateTime getRegistrationDate() {

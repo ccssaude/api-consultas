@@ -3,6 +3,7 @@ package com.api.consultingcontrolhospital.Models;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -18,6 +19,7 @@ public class ConsultaModel implements Serializable {
 
     @Column(nullable = false, length = 55)
     private String tipo_consulta;
+
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
