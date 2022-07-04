@@ -30,8 +30,8 @@ public class ConsultaController {
     }
     @PostMapping
     public ResponseEntity<Object> saveConsulta(@RequestBody @Valid ConsultaDto consultaDto){
-//        if(consultaService.existsById(consultaDto.getId())){
-//            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflict: Esta consulta ja foi alocada a outra paciente !");
+//        if(consultaService.existsById(consultaDto.getVagas_dispo())){
+//            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflict: O número de consultas por dia esgotou !");
 //        }
         //will come date and vacancy quantity validation
         var consultaModel = new ConsultaModel();

@@ -10,7 +10,6 @@ import java.util.UUID;
 public class PacienteModel implements Serializable {
     private static final long serialVersionUID =1L;
     @Id
-
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false, length = 50)
