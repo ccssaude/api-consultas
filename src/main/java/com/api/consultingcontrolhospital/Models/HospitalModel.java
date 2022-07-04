@@ -16,7 +16,7 @@ public class HospitalModel implements Serializable {
     private UUID id;
     @Column(nullable = false, length = 100)
     private String nome;
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private Integer vagas_dispo;
     @Column(nullable = false)
     private LocalDateTime registrationDate;

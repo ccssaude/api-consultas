@@ -1,12 +1,14 @@
 package com.api.consultingcontrolhospital.Dtos;
 
+import com.sun.istack.NotNull;
+
 import javax.validation.constraints.NotBlank;
 
 public class HospitalDto {
 
     @NotBlank
     private String nome;
-    @NotBlank
+    @NotNull
     private Integer vagas_dispo;
 
     public String getNome() {

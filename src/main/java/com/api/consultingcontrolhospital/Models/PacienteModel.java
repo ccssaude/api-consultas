@@ -20,11 +20,12 @@ public class PacienteModel implements Serializable {
     @Column(nullable = false, length = 50)
     private String motivo_referencia;
 
-    @Column(nullable = false, length = 55)
-    private Date Data_consulta;
+    @Column(nullable = true, length = 55)
+//  private Date Data_consulta;
+    private String Data_consulta;
 
-    @Column(nullable = false, length = 55)
-    private Date Data_ref;
+    @Column(nullable = true, length = 55)
+    private LocalDateTime Data_ref;
 
     @Column(nullable = false)
     private LocalDateTime registrationDate;
@@ -68,19 +69,19 @@ public class PacienteModel implements Serializable {
         this.motivo_referencia = motivo_referencia;
     }
 
-    public Date getData_consulta() {
+    public String getData_consulta() {
         return Data_consulta;
     }
 
-    public void setData_consulta(Date data_consulta) {
+    public void setData_consulta(String data_consulta) {
         Data_consulta = data_consulta;
     }
 
-    public Date getData_ref() {
+    public LocalDateTime getData_ref() {
         return Data_ref;
     }
 
-    public void setData_ref(Date data_ref) {
+    public void setData_ref(LocalDateTime data_ref) {
         Data_ref = data_ref;
     }
 
