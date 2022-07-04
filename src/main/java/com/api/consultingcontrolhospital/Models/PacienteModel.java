@@ -25,6 +25,9 @@ public class PacienteModel implements Serializable {
     @JoinColumn(name = "hospital_id")
     private HospitalModel hospitalModel;
 
+    @ManyToOne
+    private HospitalModel hospital;
+
     public UUID getId() {
         return id;
     }
@@ -63,5 +66,21 @@ public class PacienteModel implements Serializable {
 
     public void setRegistrationDate(LocalDateTime registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    public HospitalModel getHospitalModel() {
+        return hospitalModel;
+    }
+
+    public void setHospitalModel(HospitalModel hospitalModel) {
+        this.hospitalModel = hospitalModel;
+    }
+
+    public HospitalModel getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(HospitalModel hospital) {
+        this.hospital = hospital;
     }
 }

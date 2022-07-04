@@ -3,6 +3,7 @@ package com.api.consultingcontrolhospital.Models;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,6 +20,8 @@ public class HospitalModel implements Serializable {
     private Integer vagas_dispo;
     @Column(nullable = false)
     private LocalDateTime registrationDate;
+    @OneToMany
+    private List<PacienteModel> pacientes;
 
     public UUID getId() {
         return id;
@@ -50,5 +53,13 @@ public class HospitalModel implements Serializable {
 
     public void setRegistrationDate(LocalDateTime registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    public List<PacienteModel> getPacientes() {
+        return pacientes;
+    }
+
+    public void setPacientes(List<PacienteModel> pacientes) {
+        this.pacientes = pacientes;
     }
 }
