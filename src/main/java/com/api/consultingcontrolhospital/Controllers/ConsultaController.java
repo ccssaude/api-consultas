@@ -52,7 +52,7 @@ public class ConsultaController {
         }
         return ResponseEntity.status(HttpStatus.OK).body(consultaModelOptional.get());
     }
-//    @PutMapping("/{id}")
+    //    @PutMapping("/{id}")
 
 }
 
