@@ -8,7 +8,7 @@ public class ConsultaDto {
     @NotBlank
     private String nome;
     @NotBlank
-    @Size(max = 20)
+    @Size(max = 55)
     private String tipo_consulta;
 //    @NotBlank
 //    private UUID paciente_id;
