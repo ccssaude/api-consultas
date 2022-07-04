@@ -31,7 +31,7 @@ public class PacienteController {
     public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid PacienteDto pacienteDto){
         var pacienteModel = new PacienteModel();
         BeanUtils.copyProperties(pacienteDto, pacienteModel);
-        pacienteModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
+        pacienteModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("GMT+2")));
         return ResponseEntity.status(HttpStatus.CREATED).body(pacienteService.save(pacienteModel));
     }
 
