@@ -28,7 +28,4 @@ public class HospitalService {
     public Optional<HospitalModel> findById(UUID id){
         return hospitalRepository.findById(id);
     }
-
-
-
 }
