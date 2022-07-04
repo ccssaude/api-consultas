@@ -16,7 +16,7 @@ public class HospitalModel implements Serializable {
     @Column(nullable = false, length = 50)
     private String nome;
     @Column(nullable = false, length = 50)
-    private String distrito;
+    private Boolean vagas_dispo;
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
@@ -36,12 +36,12 @@ public class HospitalModel implements Serializable {
         this.nome = nome;
     }
 
-    public String getDistrito() {
-        return distrito;
+    public Boolean getVagas_dispo() {
+        return vagas_dispo;
     }
 
-    public void setDistrito(String distrito) {
-        this.distrito = distrito;
+    public void setVagas_dispo(Boolean vagas_dispo) {
+        this.vagas_dispo = vagas_dispo;
     }
 
     public LocalDateTime getRegistrationDate() {

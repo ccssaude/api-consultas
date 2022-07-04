@@ -13,8 +13,6 @@ public class ConsultaDto {
 //    @NotBlank
 //    private UUID paciente_id;
 //    @NotBlank
-//    private UUID vaga_id;
-//    @NotBlank
 //    private UUID hospital_id;
 
     public String getNome() {

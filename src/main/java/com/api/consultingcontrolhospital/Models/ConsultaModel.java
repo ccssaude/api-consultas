@@ -13,10 +13,10 @@ public class ConsultaModel implements Serializable {
     @Column(name = "consulta_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @Column(nullable = false, length = 25)
+    @Column(nullable = false, length = 55)
     private String nome;
 
-    @Column(nullable = false, length = 25)
+    @Column(nullable = false, length = 55)
     private String tipo_consulta;
     @Column(nullable = false)
     private LocalDateTime registrationDate;
