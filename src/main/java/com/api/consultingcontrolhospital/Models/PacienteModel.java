@@ -36,4 +36,75 @@ public class PacienteModel implements Serializable {
     @ManyToOne
     private HospitalModel hospitall;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getMotivo_referencia() {
+        return motivo_referencia;
+    }
+
+    public void setMotivo_referencia(String motivo_referencia) {
+        this.motivo_referencia = motivo_referencia;
+    }
+
+    public Date getData_consulta() {
+        return Data_consulta;
+    }
+
+    public void setData_consulta(Date data_consulta) {
+        Data_consulta = data_consulta;
+    }
+
+    public Date getData_ref() {
+        return Data_ref;
+    }
+
+    public void setData_ref(Date data_ref) {
+        Data_ref = data_ref;
+    }
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDateTime registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public HospitalModel getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(HospitalModel hospital) {
+        this.hospital = hospital;
+    }
+
+    public HospitalModel getHospitall() {
+        return hospitall;
+    }
+
+    public void setHospitall(HospitalModel hospitall) {
+        this.hospitall = hospitall;
+    }
 }

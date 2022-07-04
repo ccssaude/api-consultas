@@ -21,7 +21,7 @@ public class HospitalModel implements Serializable {
     @Column(nullable = false)
     private LocalDateTime registrationDate;
     @OneToMany
-    private List<PacienteModel> pacientes;
+    private List<PacienteModel> paciente;
 
     public UUID getId() {
         return id;
@@ -55,11 +55,11 @@ public class HospitalModel implements Serializable {
         this.registrationDate = registrationDate;
     }
 
-    public List<PacienteModel> getPacientes() {
-        return pacientes;
+    public List<PacienteModel> getPaciente() {
+        return paciente;
     }
 
-    public void setPacientes(List<PacienteModel> pacientes) {
-        this.pacientes = pacientes;
+    public void setPaciente(List<PacienteModel> paciente) {
+        this.paciente = paciente;
     }
 }
