@@ -21,6 +21,10 @@ public class PacienteModel implements Serializable {
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hospital_id")
+    private HospitalModel hospitalModel;
+
     public UUID getId() {
         return id;
     }

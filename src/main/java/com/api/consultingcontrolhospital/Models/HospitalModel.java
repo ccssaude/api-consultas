@@ -16,7 +16,7 @@ public class HospitalModel implements Serializable {
     @Column(nullable = false, length = 100)
     private String nome;
     @Column(nullable = false, length = 50)
-    private Boolean vagas_dispo;
+    private Integer vagas_dispo;
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
@@ -36,11 +36,11 @@ public class HospitalModel implements Serializable {
         this.nome = nome;
     }
 
-    public Boolean getVagas_dispo() {
+    public Integer getVagas_dispo() {
         return vagas_dispo;
     }
 
-    public void setVagas_dispo(Boolean vagas_dispo) {
+    public void setVagas_dispo(Integer vagas_dispo) {
         this.vagas_dispo = vagas_dispo;
     }
 

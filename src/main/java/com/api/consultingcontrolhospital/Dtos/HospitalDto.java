@@ -7,7 +7,7 @@ public class HospitalDto {
     @NotBlank
     private String nome;
     @NotBlank
-    private Boolean vagas_dispo;
+    private Integer vagas_dispo;
 
     public String getNome() {
         return nome;
@@ -17,11 +17,11 @@ public class HospitalDto {
         this.nome = nome;
     }
 
-    public Boolean getVagas_dispo() {
+    public Integer getVagas_dispo() {
         return vagas_dispo;
     }
 
-    public void setVagas_dispo(Boolean vagas_dispo) {
+    public void setVagas_dispo(Integer vagas_dispo) {
         this.vagas_dispo = vagas_dispo;
     }
 }
