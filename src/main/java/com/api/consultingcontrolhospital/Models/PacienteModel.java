@@ -31,80 +31,9 @@ public class PacienteModel implements Serializable {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hospital_id")
-    private HospitalModel hospitalModel;
+    private HospitalModel hospital;
 
     @ManyToOne
     private HospitalModel hospital;
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getMotivo_referencia() {
-        return motivo_referencia;
-    }
-
-    public void setMotivo_referencia(String motivo_referencia) {
-        this.motivo_referencia = motivo_referencia;
-    }
-
-    public Date getData_consulta() {
-        return Data_consulta;
-    }
-
-    public void setData_consulta(Date data_consulta) {
-        Data_consulta = data_consulta;
-    }
-
-    public Date getData_ref() {
-        return Data_ref;
-    }
-
-    public void setData_ref(Date data_ref) {
-        Data_ref = data_ref;
-    }
-
-    public LocalDateTime getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(LocalDateTime registrationDate) {
-        this.registrationDate = registrationDate;
-    }
-
-    public HospitalModel getHospitalModel() {
-        return hospitalModel;
-    }
-
-    public void setHospitalModel(HospitalModel hospitalModel) {
-        this.hospitalModel = hospitalModel;
-    }
-
-    public HospitalModel getHospital() {
-        return hospital;
-    }
-
-    public void setHospital(HospitalModel hospital) {
-        this.hospital = hospital;
-    }
 }
