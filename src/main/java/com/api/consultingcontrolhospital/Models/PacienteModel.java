@@ -30,12 +30,8 @@ public class PacienteModel implements Serializable {
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hospital_id")
-    private HospitalModel hospital;
-
     @ManyToOne
-    private HospitalModel hospitall;
+    private HospitalModel hospital_id;
 
     public UUID getId() {
         return id;
@@ -93,19 +89,11 @@ public class PacienteModel implements Serializable {
         this.registrationDate = registrationDate;
     }
 
-    public HospitalModel getHospital() {
-        return hospital;
+    public HospitalModel getHospital_id() {
+        return hospital_id;
     }
 
-    public void setHospital(HospitalModel hospital) {
-        this.hospital = hospital;
-    }
-
-    public HospitalModel getHospitall() {
-        return hospitall;
-    }
-
-    public void setHospitall(HospitalModel hospitall) {
-        this.hospitall = hospitall;
+    public void setHospital_id(HospitalModel hospital_id) {
+        this.hospital_id = hospital_id;
     }
 }
