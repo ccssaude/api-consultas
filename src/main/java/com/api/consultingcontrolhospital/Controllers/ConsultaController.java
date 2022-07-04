@@ -4,7 +4,6 @@ package com.api.consultingcontrolhospital.Controllers;
 import com.api.consultingcontrolhospital.Dtos.ConsultaDto;
 import com.api.consultingcontrolhospital.Models.ConsultaModel;
 import com.api.consultingcontrolhospital.Service.ConsultaService;
-import com.api.consultingcontrolhospital.Service.VagaService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -26,10 +26,6 @@ public class ConsultaModel implements Serializable {
     private PacienteModel pacienteModel;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "vaga_id")
-    private VagaModel vagaModel;
-
-    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hospital_id")
     private HospitalModel hospitalModel;
 
@@ -71,14 +67,6 @@ public class ConsultaModel implements Serializable {
 
     public void setPacienteModel(PacienteModel pacienteModel) {
         this.pacienteModel = pacienteModel;
-    }
-
-    public VagaModel getVagaModel() {
-        return vagaModel;
-    }
-
-    public void setVagaModel(VagaModel vagaModel) {
-        this.vagaModel = vagaModel;
     }
 
     public HospitalModel getHospitalModel() {
