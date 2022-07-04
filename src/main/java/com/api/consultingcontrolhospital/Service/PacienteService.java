@@ -1,7 +1,5 @@
 package com.api.consultingcontrolhospital.Service;
 
-
-import com.api.consultingcontrolhospital.Models.ConsultaModel;
 import com.api.consultingcontrolhospital.Models.PacienteModel;
 import com.api.consultingcontrolhospital.Repositories.PacienteRespository;
 import org.springframework.data.domain.Page;
