@@ -29,7 +29,7 @@ public class ConsultaController {
         this.consultaService = consultaService;
     }
     @PostMapping
-    public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid ConsultaDto consultaDto){
+    public ResponseEntity<Object> saveConsulta(@RequestBody @Valid ConsultaDto consultaDto){
 //        if(consultaService.existsById(consultaDto.getId())){
 //            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflict: Esta consulta ja foi alocada a outra paciente !");
 //        }
