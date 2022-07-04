@@ -64,4 +64,28 @@ public class ConsultaModel implements Serializable {
     public void setRegistrationDate(LocalDateTime registrationDate) {
         this.registrationDate = registrationDate;
     }
+
+    public PacienteModel getPacienteModel() {
+        return pacienteModel;
+    }
+
+    public void setPacienteModel(PacienteModel pacienteModel) {
+        this.pacienteModel = pacienteModel;
+    }
+
+    public VagaModel getVagaModel() {
+        return vagaModel;
+    }
+
+    public void setVagaModel(VagaModel vagaModel) {
+        this.vagaModel = vagaModel;
+    }
+
+    public HospitalModel getHospitalModel() {
+        return hospitalModel;
+    }
+
+    public void setHospitalModel(HospitalModel hospitalModel) {
+        this.hospitalModel = hospitalModel;
+    }
 }
