@@ -23,7 +23,7 @@ public class HospitalModel implements Serializable {
     private List<PacienteModel> paciente;
 
     @OneToMany
-    private List<ConsultaModel> consulta;
+    private List<ConsultaModel> consultas;
 
     public UUID getId() {
         return id;
@@ -64,4 +64,5 @@ public class HospitalModel implements Serializable {
     public void setPaciente(List<PacienteModel> paciente) {
         this.paciente = paciente;
     }
+
 }

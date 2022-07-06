@@ -22,7 +22,7 @@ public class ConsultaModel implements Serializable {
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "paciente_id")
     private PacienteModel pacienteModel;
 
