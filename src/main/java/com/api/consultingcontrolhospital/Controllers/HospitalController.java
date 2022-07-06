@@ -50,4 +50,18 @@ public class HospitalController {
         return ResponseEntity.status(HttpStatus.OK).body(hospitalModelOptional.get());
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateHospital(@PathVariable(value = "id") UUID id, @RequestBody @Valid HospitalDto hospitalDto){
+    Optional<HospitalModel> hospitalModelOptional = hospitalService.findById(id);
+    if (!hospitalModelOptional.isPresent()){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Hospital not found");
+        }
+        var hospitalModel = new HospitalModel();
+        BeanUtils.copyProperties(hospitalDto, hospitalModel);
+        hospitalModel.setId(hospitalModelOptional.get().getId());
+        hospitalModel.setRegistrationDate(hospitalModelOptional.get().getRegistrationDate());
+        return ResponseEntity.status(HttpStatus.OK).body(hospitalService.save(hospitalModel));
+    }
+
+
 }
