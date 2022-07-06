@@ -65,4 +65,11 @@ public class HospitalModel implements Serializable {
         this.paciente = paciente;
     }
 
+    public List<ConsultaModel> getConsultas() {
+        return consultas;
+    }
+
+    public void setConsultas(List<ConsultaModel> consultas) {
+        this.consultas = consultas;
+    }
 }
