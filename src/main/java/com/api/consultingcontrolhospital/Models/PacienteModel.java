@@ -24,10 +24,13 @@ public class PacienteModel implements Serializable {
     private String motivo_referencia;
 
     @Column(nullable = true, length = 100)
-    private Integer tipo_consulta;
+    private String tipo_consulta;
 
     @Column(nullable = true, length = 55)
     private LocalDateTime Data_ref;
+
+    @Column(nullable = true, length = 55)
+    private Date Data_consulta;
 
     @ManyToOne
     private HospitalModel hospital;
@@ -67,11 +70,11 @@ public class PacienteModel implements Serializable {
         this.motivo_referencia = motivo_referencia;
     }
 
-    public Integer getTipo_consulta() {
+    public String getTipo_consulta() {
         return tipo_consulta;
     }
 
-    public void setTipo_consulta(Integer tipo_consulta) {
+    public void setTipo_consulta(String tipo_consulta) {
         this.tipo_consulta = tipo_consulta;
     }
 
@@ -81,6 +84,14 @@ public class PacienteModel implements Serializable {
 
     public void setData_ref(LocalDateTime data_ref) {
         Data_ref = data_ref;
+    }
+
+    public Date getData_consulta() {
+        return Data_consulta;
+    }
+
+    public void setData_consulta(Date data_consulta) {
+        Data_consulta = data_consulta;
     }
 
     public HospitalModel getHospital() {

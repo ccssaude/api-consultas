@@ -50,7 +50,7 @@ public class PacienteController {
     public ResponseEntity<Object> updatePaciente(@PathVariable(value = "id") UUID id, @RequestBody @Valid PacienteDto pacienteDto){
         Optional<PacienteModel> pacienteModelOptional = pacienteService.findById(id);
         if (!pacienteModelOptional.isPresent()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado");
         }
         var pacienteModel = new PacienteModel();
         BeanUtils.copyProperties(pacienteDto, pacienteModel);

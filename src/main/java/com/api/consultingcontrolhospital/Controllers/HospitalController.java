@@ -29,15 +29,15 @@ public class HospitalController {
         this.hospitalService = hospitalService;
     }
     @PostMapping
-    public ResponseEntity<Object> saveHospital(@RequestBody @Valid HospitalDto hospitalDto, Integer vagas_dispo){
-        if (vagas_dispo > 10 ){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflict: Vagas esgotadas!");
-        }
+    public ResponseEntity<Object> saveHospital(@RequestBody @Valid HospitalDto hospitalDto){
+//        if (vagas_dispo < 10 ){
+//            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflict: Vagas esgotadas!");
+//        } else {
         var hospitalModel = new HospitalModel();
         BeanUtils.copyProperties(hospitalDto, hospitalModel);
         hospitalModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(hospitalService.save(hospitalModel));
-
+//        }
     }
 
     @GetMapping

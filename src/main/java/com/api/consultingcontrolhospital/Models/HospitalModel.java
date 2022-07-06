@@ -17,9 +17,6 @@ public class HospitalModel implements Serializable {
     @Column(nullable = true, length = 50)
     private Integer vagas_dispo;
 
-    @Column(nullable = true, length = 55)
-    private Date Data_consulta;
-
     @OneToMany
     private List<PacienteModel> pacientes;
 
@@ -50,12 +47,12 @@ public class HospitalModel implements Serializable {
         this.vagas_dispo = vagas_dispo;
     }
 
-    public Date getData_consulta() {
-        return Data_consulta;
+    public List<PacienteModel> getPacientes() {
+        return pacientes;
     }
 
-    public void setData_consulta(Date data_consulta) {
-        Data_consulta = data_consulta;
+    public void setPacientes(List<PacienteModel> pacientes) {
+        this.pacientes = pacientes;
     }
 
     public LocalDateTime getRegistrationDate() {

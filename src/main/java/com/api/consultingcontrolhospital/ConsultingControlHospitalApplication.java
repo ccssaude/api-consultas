@@ -16,5 +16,4 @@ public class ConsultingControlHospitalApplication {
 	public String index(){
 		return "Welcome to consulting-Control RestFull API";
 	}
-
 }

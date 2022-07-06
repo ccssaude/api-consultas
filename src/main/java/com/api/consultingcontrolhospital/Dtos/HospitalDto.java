@@ -6,9 +6,9 @@ import javax.validation.constraints.NotBlank;
 
 public class HospitalDto {
 
-    @NotBlank
+    @NotBlank(message="Este campo não pode estar em branco.")
     private String nome;
-    @NotNull
+    @NotBlank(message="Este campo não pode estar em branco.")
     private Integer vagas_dispo;
 
     public String getNome() {
