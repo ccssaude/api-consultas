@@ -12,8 +12,6 @@ public class ConsultaDto {
     private String tipo_consulta;
 //    @NotBlank
 //    private UUID paciente_id;
-//    @NotBlank
-//    private UUID hospital_id;
 
     public String getNome() {
         return nome;
