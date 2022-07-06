@@ -11,7 +11,6 @@ import java.util.UUID;
 public class HospitalModel implements Serializable {
     private static final long serialVersionUID =1L;
     @Id
-    @Column(name = "hospital_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false, length = 100)
