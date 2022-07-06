@@ -69,4 +69,11 @@ public class ConsultaModel implements Serializable {
         this.pacienteModel = pacienteModel;
     }
 
+    public HospitalModel getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(HospitalModel hospital) {
+        this.hospital = hospital;
+    }
 }
