@@ -30,7 +30,7 @@ public class PacienteModel implements Serializable {
     private LocalDateTime registrationDate;
 
     @ManyToOne
-    private HospitalModel hospital_id;
+    private HospitalModel hospital;
 
     public UUID getId() {
         return id;
@@ -88,11 +88,11 @@ public class PacienteModel implements Serializable {
         this.registrationDate = registrationDate;
     }
 
-    public HospitalModel getHospital_id() {
-        return hospital_id;
+    public HospitalModel getHospital() {
+        return hospital;
     }
 
-    public void setHospital_id(HospitalModel hospital_id) {
-        this.hospital_id = hospital_id;
+    public void setHospital(HospitalModel hospital) {
+        this.hospital = hospital;
     }
 }
