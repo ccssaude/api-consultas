@@ -22,6 +22,9 @@ public class HospitalModel implements Serializable {
     @OneToMany
     private List<PacienteModel> paciente;
 
+    @OneToMany
+    private List<ConsultaModel> consulta;
+
     public UUID getId() {
         return id;
     }
