@@ -3,9 +3,7 @@ package com.api.consultingcontrolhospital.Models;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "TB_HOSPITAL")
@@ -15,13 +13,15 @@ public class HospitalModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false, length = 100)
-
     private String nome;
     @Column(nullable = true, length = 50)
     private Integer vagas_dispo;
 
     @Column(nullable = true, length = 55)
     private Date Data_consulta;
+
+    @OneToMany
+    private List<PacienteModel> pacientes;
 
     @Column(nullable = false)
     private LocalDateTime registrationDate;

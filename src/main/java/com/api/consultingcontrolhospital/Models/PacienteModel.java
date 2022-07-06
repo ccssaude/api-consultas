@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -27,6 +28,9 @@ public class PacienteModel implements Serializable {
 
     @Column(nullable = true, length = 55)
     private LocalDateTime Data_ref;
+
+    @ManyToOne
+    private HospitalModel hospital;
 
     @Column(nullable = false)
     private LocalDateTime registrationDate;
@@ -77,6 +81,14 @@ public class PacienteModel implements Serializable {
 
     public void setData_ref(LocalDateTime data_ref) {
         Data_ref = data_ref;
+    }
+
+    public HospitalModel getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(HospitalModel hospital) {
+        this.hospital = hospital;
     }
 
     public LocalDateTime getRegistrationDate() {
