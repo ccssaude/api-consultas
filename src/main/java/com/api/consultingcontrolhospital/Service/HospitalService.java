@@ -1,8 +1,11 @@
 package com.api.consultingcontrolhospital.Service;
 import com.api.consultingcontrolhospital.Models.HospitalModel;
+import com.api.consultingcontrolhospital.Models.PacienteModel;
 import com.api.consultingcontrolhospital.Repositories.HospitalRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -27,4 +30,6 @@ public class HospitalService {
     public Optional<HospitalModel> findById(UUID id){
         return hospitalRepository.findById(id);
     }
+
+
 }

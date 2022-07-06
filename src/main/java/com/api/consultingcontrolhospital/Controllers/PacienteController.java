@@ -45,6 +45,7 @@ public class PacienteController {
         Optional<PacienteModel> pacienteModelOptional = pacienteService.findById(id);
         return pacienteModelOptional.<ResponseEntity<Object>>map(pacienteModel -> ResponseEntity.status(HttpStatus.OK).body(pacienteModel)).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado !"));
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<Object> updatePaciente(@PathVariable(value = "id") UUID id, @RequestBody @Valid PacienteDto pacienteDto){
         Optional<PacienteModel> pacienteModelOptional = pacienteService.findById(id);
