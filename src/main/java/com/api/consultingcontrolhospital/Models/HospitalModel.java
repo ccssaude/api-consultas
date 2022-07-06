@@ -3,6 +3,7 @@ package com.api.consultingcontrolhospital.Models;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,16 +15,16 @@ public class HospitalModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false, length = 100)
+
     private String nome;
     @Column(nullable = true, length = 50)
     private Integer vagas_dispo;
+
+    @Column(nullable = true, length = 55)
+    private Date Data_consulta;
+
     @Column(nullable = false)
     private LocalDateTime registrationDate;
-    @OneToMany
-    private List<PacienteModel> pacientes;
-
-    @OneToMany
-    private List<ConsultaModel> consultas;
 
     public UUID getId() {
         return id;
@@ -49,27 +50,19 @@ public class HospitalModel implements Serializable {
         this.vagas_dispo = vagas_dispo;
     }
 
+    public Date getData_consulta() {
+        return Data_consulta;
+    }
+
+    public void setData_consulta(Date data_consulta) {
+        Data_consulta = data_consulta;
+    }
+
     public LocalDateTime getRegistrationDate() {
         return registrationDate;
     }
 
     public void setRegistrationDate(LocalDateTime registrationDate) {
         this.registrationDate = registrationDate;
-    }
-
-    public List<PacienteModel> getPacientes() {
-        return pacientes;
-    }
-
-    public void setPacientes(List<PacienteModel> pacientes) {
-        this.pacientes = pacientes;
-    }
-
-    public List<ConsultaModel> getConsultas() {
-        return consultas;
-    }
-
-    public void setConsultas(List<ConsultaModel> consultas) {
-        this.consultas = consultas;
     }
 }

@@ -1,6 +1,5 @@
 package com.api.consultingcontrolhospital.Service;
 import com.api.consultingcontrolhospital.Models.HospitalModel;
-import com.api.consultingcontrolhospital.Repositories.ConsultaRepository;
 import com.api.consultingcontrolhospital.Repositories.HospitalRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
