@@ -27,6 +27,9 @@ public class ConsultaModel implements Serializable {
     @JoinColumn(name = "paciente_id")
     private PacienteModel pacienteModel;
 
+    @ManyToOne
+    private HospitalModel hospital;
+
     public UUID getId() {
         return id;
     }

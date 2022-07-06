@@ -2,7 +2,6 @@ package com.api.consultingcontrolhospital.Dtos;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.UUID;
 
 public class ConsultaDto {
     @NotBlank
