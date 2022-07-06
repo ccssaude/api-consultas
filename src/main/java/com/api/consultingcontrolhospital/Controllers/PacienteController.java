@@ -43,10 +43,19 @@ public class PacienteController {
     @GetMapping("/{id}")
     public ResponseEntity<Object> getOnePaciente(@PathVariable(value = "id") UUID id){
         Optional<PacienteModel> pacienteModelOptional = pacienteService.findById(id);
-        if (!pacienteModelOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado !");
+        return pacienteModelOptional.<ResponseEntity<Object>>map(pacienteModel -> ResponseEntity.status(HttpStatus.OK).body(pacienteModel)).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado !"));
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updatePaciente(@PathVariable(value = "id") UUID id, @RequestBody @Valid PacienteDto pacienteDto){
+        Optional<PacienteModel> pacienteModelOptional = pacienteService.findById(id);
+        if (!pacienteModelOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente not found");
         }
-        return ResponseEntity.status(HttpStatus.OK).body(pacienteModelOptional.get());
+        var pacienteModel = new PacienteModel();
+        BeanUtils.copyProperties(pacienteDto, pacienteModel);
+        pacienteModel.setId(pacienteModelOptional.get().getId());
+        pacienteModel.setRegistrationDate(pacienteModelOptional.get().getRegistrationDate());
+        return ResponseEntity.status(HttpStatus.OK).body(pacienteService.save(pacienteModel));
     }
 
 }
