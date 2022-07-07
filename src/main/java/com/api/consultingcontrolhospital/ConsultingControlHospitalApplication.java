@@ -25,7 +25,7 @@ public class ConsultingControlHospitalApplication {
 		if (day==5 || day==6){
 			return "Consulta alocada com sucesso !";
 		}else {
-			return"As marcações apenas podem ser alocadas para quita-feira ou sexta-feira";
+			return "As marcações apenas podem ser alocadas para quita-feira ou sexta-feira";
 		}
 	}
 }
