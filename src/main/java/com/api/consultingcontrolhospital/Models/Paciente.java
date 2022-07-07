@@ -4,16 +4,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "TB_PACIENTE")
-public class PacienteModel implements Serializable {
+public class Paciente implements Serializable {
     private static final long serialVersionUID =1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID paciente_id;
+    private UUID id;
     @Column(nullable = false, length = 50)
     private String nome;
 
@@ -36,15 +34,15 @@ public class PacienteModel implements Serializable {
     private LocalDateTime registrationDate;
 
     @ManyToOne
-    @JoinColumn(name="paciente_id")
-    private PacienteModel pacientes;
+    @JoinColumn(name="hospital_id", nullable = true)
+    private Hospital hospital_id;
 
-    public UUID getPaciente_id() {
-        return paciente_id;
+    public UUID getId() {
+        return id;
     }
 
-    public void setPaciente_id(UUID paciente_id) {
-        this.paciente_id = paciente_id;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -103,11 +101,11 @@ public class PacienteModel implements Serializable {
         this.registrationDate = registrationDate;
     }
 
-    public PacienteModel getPacientes() {
-        return pacientes;
+    public Hospital getHospital_id() {
+        return hospital_id;
     }
 
-    public void setPacientes(PacienteModel pacientes) {
-        this.pacientes = pacientes;
+    public void setHospital_id(Hospital hospital_id) {
+        this.hospital_id = hospital_id;
     }
 }

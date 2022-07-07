@@ -6,12 +6,11 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 @Entity
-@Table(name = "TB_HOSPITAL")
-public class HospitalModel implements Serializable {
+public class Hospital implements Serializable {
     private static final long serialVersionUID =1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID hospital_id;
+    private UUID id;
 
     @Column(nullable = false, length = 100)
     private String nome;
@@ -19,18 +18,18 @@ public class HospitalModel implements Serializable {
     @Column(nullable = true, length = 50)
     private Integer vagas_dispo;
 
-    @OneToMany(mappedBy="pacientes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<PacienteModel> pacientes;
+   @OneToMany(mappedBy="hospital_id")
+   private List<Paciente> pacientes;
 
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
-    public UUID getHospital_id() {
-        return hospital_id;
+    public UUID getId() {
+        return id;
     }
 
-    public void setHospital_id(UUID hospital_id) {
-        this.hospital_id = hospital_id;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -49,11 +48,11 @@ public class HospitalModel implements Serializable {
         this.vagas_dispo = vagas_dispo;
     }
 
-    public Set<PacienteModel> getPacientes() {
+    public List<Paciente> getPacientes() {
         return pacientes;
     }
 
-    public void setPacientes(Set<PacienteModel> pacientes) {
+    public void setPacientes(List<Paciente> pacientes) {
         this.pacientes = pacientes;
     }
 

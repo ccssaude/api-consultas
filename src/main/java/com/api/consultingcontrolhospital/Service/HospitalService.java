@@ -1,11 +1,9 @@
 package com.api.consultingcontrolhospital.Service;
-import com.api.consultingcontrolhospital.Models.HospitalModel;
-import com.api.consultingcontrolhospital.Models.PacienteModel;
+
+import com.api.consultingcontrolhospital.Models.Hospital;
 import com.api.consultingcontrolhospital.Repositories.HospitalRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -20,14 +18,14 @@ public class HospitalService {
         this.hospitalRepository = hospitalRepository;
     }
     @Transactional
-    public HospitalModel save(HospitalModel hospitalModel){
+    public Hospital save(Hospital hospitalModel){
         return hospitalRepository.save(hospitalModel);
     }
     @Transactional
-    public Page<HospitalModel> findAll(Pageable pageable){
+    public Page<Hospital> findAll(Pageable pageable){
         return hospitalRepository.findAll(pageable);
     }
-    public Optional<HospitalModel> findById(UUID id){
+    public Optional<Hospital> findById(UUID id){
         return hospitalRepository.findById(id);
     }
 

@@ -1,6 +1,7 @@
 package com.api.consultingcontrolhospital.Dtos;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 public class PacienteDto {
@@ -11,12 +12,10 @@ public class PacienteDto {
     private String telefone;
     @NotBlank(message="Este campo não pode estar em branco.")
     private String motivo_referencia;
-
     @NotBlank(message="Este campo não pode estar em branco.")
     private String tipo_consulta;
-
-//    @NotBlank(message="Este campo não pode estar em branco.")
-//    private UUID hospital;
+//    @NotNull
+//    private UUID hospital_id;
 
     public String getNome() {
         return nome;
@@ -49,12 +48,4 @@ public class PacienteDto {
     public void setTipo_consulta(String tipo_consulta) {
         this.tipo_consulta = tipo_consulta;
     }
-
-//    public UUID getHospital() {
-//        return hospital;
-//    }
-//
-//    public void setHospital(UUID hospital) {
-//        this.hospital = hospital;
-//    }
 }

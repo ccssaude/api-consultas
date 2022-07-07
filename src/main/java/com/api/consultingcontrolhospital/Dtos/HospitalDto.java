@@ -8,8 +8,8 @@ public class HospitalDto {
 
     @NotBlank(message="Este campo não pode estar em branco.")
     private String nome;
-    @NotBlank(message="Este campo não pode estar em branco.")
-    private Integer vagas_dispo;
+//    @NotBlank(message="Este campo não pode estar em branco.")
+//    private Integer vagas_dispo;
 
     public String getNome() {
         return nome;
@@ -19,11 +19,11 @@ public class HospitalDto {
         this.nome = nome;
     }
 
-    public Integer getVagas_dispo() {
-        return vagas_dispo;
-    }
-
-    public void setVagas_dispo(Integer vagas_dispo) {
-        this.vagas_dispo = vagas_dispo;
-    }
+//    public Integer getVagas_dispo() {
+//        return vagas_dispo;
+//    }
+//
+//    public void setVagas_dispo(Integer vagas_dispo) {
+//        this.vagas_dispo = vagas_dispo;
+//    }
 }
