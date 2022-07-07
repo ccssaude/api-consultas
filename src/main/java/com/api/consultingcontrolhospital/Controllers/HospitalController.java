@@ -36,7 +36,7 @@ public class HospitalController {
     public ResponseEntity<Object> saveHospital(@RequestBody @Valid HospitalDto hospitalDto) {
         var hospital = new Hospital();
         BeanUtils.copyProperties(hospitalDto, hospital);
-        hospital.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC/GMT +2:00")));
+        hospital.setRegistrationDate(LocalDateTime.now(ZoneId.of("GMT+2")));
         return ResponseEntity.status(HttpStatus.CREATED).body(hospitalService.save(hospital));
     }
 
