@@ -33,13 +33,13 @@ public class PacienteController {
 
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_WEEK);
-        if (day==4 || day==6){
+        if (day==5 || day==6){
             var pacienteModel = new PacienteModel();
             BeanUtils.copyProperties(pacienteDto, pacienteModel);
             pacienteModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("GMT+2")));
             return ResponseEntity.status(HttpStatus.CREATED).body(pacienteService.save(pacienteModel));
         }else {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("As marcações apenas podem ser alocadas para segundas e sextas");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("As marcações apenas podem ser alocadas para quita-feira ou sexta-sexta");
         }
     }
 
