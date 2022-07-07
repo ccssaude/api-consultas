@@ -15,8 +15,8 @@ public class PacienteDto {
     @NotBlank(message="Este campo não pode estar em branco.")
     private String tipo_consulta;
 
-    @NotBlank(message="Este campo não pode estar em branco.")
-    private UUID hospital;
+//    @NotBlank(message="Este campo não pode estar em branco.")
+//    private UUID hospital;
 
     public String getNome() {
         return nome;
@@ -50,11 +50,11 @@ public class PacienteDto {
         this.tipo_consulta = tipo_consulta;
     }
 
-    public UUID getHospital() {
-        return hospital;
-    }
-
-    public void setHospital(UUID hospital) {
-        this.hospital = hospital;
-    }
+//    public UUID getHospital() {
+//        return hospital;
+//    }
+//
+//    public void setHospital(UUID hospital) {
+//        this.hospital = hospital;
+//    }
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -29,10 +30,17 @@ public class PacienteController {
 }
     @PostMapping
     public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid PacienteDto pacienteDto){
-        var pacienteModel = new PacienteModel();
-        BeanUtils.copyProperties(pacienteDto, pacienteModel);
-        pacienteModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("GMT+2")));
-        return ResponseEntity.status(HttpStatus.CREATED).body(pacienteService.save(pacienteModel));
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        if (day==4){
+            var pacienteModel = new PacienteModel();
+            BeanUtils.copyProperties(pacienteDto, pacienteModel);
+            pacienteModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("GMT+2")));
+            return ResponseEntity.status(HttpStatus.CREATED).body(pacienteService.save(pacienteModel));
+        }else {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("As marcações apenas podem ser alocadas para segundas e sextas");
+        }
     }
 
     @GetMapping
