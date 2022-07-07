@@ -37,7 +37,7 @@ public class PacienteController {
         if (day==5 || day==6){
             var paciente = new Paciente();
             BeanUtils.copyProperties(pacienteDto, paciente);
-            paciente.setRegistrationDate(LocalDateTime.now(ZoneId.of("GMT+2")));
+            paciente.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC/GMT +2:00")));
             return ResponseEntity.status(HttpStatus.CREATED).body(pacienteService.save(paciente));
         }else {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("As marcações apenas podem ser alocadas para quita-feira ou sexta-sexta");

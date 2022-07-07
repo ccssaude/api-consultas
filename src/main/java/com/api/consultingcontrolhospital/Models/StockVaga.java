@@ -13,9 +13,6 @@ public class StockVaga {
     private UUID id;
 
     @Column(nullable = false, length = 50)
-    private Integer nome;
-
-    @Column(nullable = false, length = 50)
     private Integer Quantidade;
 
     @OneToOne
@@ -31,14 +28,6 @@ public class StockVaga {
 
     public void setId(UUID id) {
         this.id = id;
-    }
-
-    public Integer getNome() {
-        return nome;
-    }
-
-    public void setNome(Integer nome) {
-        this.nome = nome;
     }
 
     public Integer getQuantidade() {
