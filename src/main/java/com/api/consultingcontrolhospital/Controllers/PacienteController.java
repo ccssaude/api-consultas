@@ -33,7 +33,7 @@ public class PacienteController {
 
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_WEEK);
-        if (day==4){
+        if (day==4 || day==6){
             var pacienteModel = new PacienteModel();
             BeanUtils.copyProperties(pacienteDto, pacienteModel);
             pacienteModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("GMT+2")));
@@ -62,7 +62,7 @@ public class PacienteController {
         }
         var pacienteModel = new PacienteModel();
         BeanUtils.copyProperties(pacienteDto, pacienteModel);
-        pacienteModel.setId(pacienteModelOptional.get().getId());
+        pacienteModel.setPaciente_id(pacienteModelOptional.get().getPaciente_id());
         pacienteModel.setRegistrationDate(pacienteModelOptional.get().getRegistrationDate());
         return ResponseEntity.status(HttpStatus.OK).body(pacienteService.save(pacienteModel));
     }

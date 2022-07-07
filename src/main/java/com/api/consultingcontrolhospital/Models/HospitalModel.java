@@ -11,24 +11,26 @@ public class HospitalModel implements Serializable {
     private static final long serialVersionUID =1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID hospital_id;
+
     @Column(nullable = false, length = 100)
     private String nome;
+
     @Column(nullable = true, length = 50)
     private Integer vagas_dispo;
 
-    @OneToMany
-    private List<PacienteModel> pacientes;
+    @OneToMany(mappedBy="pacientes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<PacienteModel> pacientes;
 
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
-    public UUID getId() {
-        return id;
+    public UUID getHospital_id() {
+        return hospital_id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setHospital_id(UUID hospital_id) {
+        this.hospital_id = hospital_id;
     }
 
     public String getNome() {
@@ -47,11 +49,11 @@ public class HospitalModel implements Serializable {
         this.vagas_dispo = vagas_dispo;
     }
 
-    public List<PacienteModel> getPacientes() {
+    public Set<PacienteModel> getPacientes() {
         return pacientes;
     }
 
-    public void setPacientes(List<PacienteModel> pacientes) {
+    public void setPacientes(Set<PacienteModel> pacientes) {
         this.pacientes = pacientes;
     }
 

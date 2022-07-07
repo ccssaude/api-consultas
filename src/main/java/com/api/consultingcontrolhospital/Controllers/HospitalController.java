@@ -23,7 +23,6 @@ import java.util.UUID;
 @RequestMapping("/referencia/ccu-tracker/hospital")
 
 public class HospitalController {
-
     final HospitalService hospitalService;
     public HospitalController(HospitalService hospitalService){
         this.hospitalService = hospitalService;
@@ -62,7 +61,7 @@ public class HospitalController {
         }
         var hospitalModel = new HospitalModel();
         BeanUtils.copyProperties(hospitalDto, hospitalModel);
-        hospitalModel.setId(hospitalModelOptional.get().getId());
+        hospitalModel.setHospital_id(hospitalModelOptional.get().getHospital_id());
         hospitalModel.setRegistrationDate(hospitalModelOptional.get().getRegistrationDate());
         return ResponseEntity.status(HttpStatus.OK).body(hospitalService.save(hospitalModel));
     }

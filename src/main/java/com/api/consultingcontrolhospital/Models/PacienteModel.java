@@ -13,7 +13,7 @@ public class PacienteModel implements Serializable {
     private static final long serialVersionUID =1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID paciente_id;
     @Column(nullable = false, length = 50)
     private String nome;
 
@@ -32,18 +32,19 @@ public class PacienteModel implements Serializable {
     @Column(nullable = true, length = 55)
     private Date Data_consulta;
 
-    @ManyToOne
-    private HospitalModel hospital;
-
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
-    public UUID getId() {
-        return id;
+    @ManyToOne
+    @JoinColumn(name="paciente_id")
+    private PacienteModel pacientes;
+
+    public UUID getPaciente_id() {
+        return paciente_id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setPaciente_id(UUID paciente_id) {
+        this.paciente_id = paciente_id;
     }
 
     public String getNome() {
@@ -94,19 +95,19 @@ public class PacienteModel implements Serializable {
         Data_consulta = data_consulta;
     }
 
-    public HospitalModel getHospital() {
-        return hospital;
-    }
-
-    public void setHospital(HospitalModel hospital) {
-        this.hospital = hospital;
-    }
-
     public LocalDateTime getRegistrationDate() {
         return registrationDate;
     }
 
     public void setRegistrationDate(LocalDateTime registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    public PacienteModel getPacientes() {
+        return pacientes;
+    }
+
+    public void setPacientes(PacienteModel pacientes) {
+        this.pacientes = pacientes;
     }
 }
