@@ -15,11 +15,11 @@ public class Hospital implements Serializable {
     @Column(nullable = false, length = 100)
     private String nome;
 
-    @Column(nullable = true, length = 50)
-    private Integer vagas_dispo;
+    @OneToMany(mappedBy="hospital_id")
+    private List<Paciente> pacientes;
 
-   @OneToMany(mappedBy="hospital_id")
-   private List<Paciente> pacientes;
+    @OneToOne(mappedBy = "hospital_id")
+    private StockVaga stockVaga;
 
     @Column(nullable = false)
     private LocalDateTime registrationDate;
@@ -38,14 +38,6 @@ public class Hospital implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Integer getVagas_dispo() {
-        return vagas_dispo;
-    }
-
-    public void setVagas_dispo(Integer vagas_dispo) {
-        this.vagas_dispo = vagas_dispo;
     }
 
     public List<Paciente> getPacientes() {

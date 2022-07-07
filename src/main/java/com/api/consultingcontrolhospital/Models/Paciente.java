@@ -1,5 +1,7 @@
 package com.api.consultingcontrolhospital.Models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -28,6 +30,7 @@ public class Paciente implements Serializable {
     private LocalDateTime Data_ref;
 
     @Column(nullable = true, length = 55)
+    @DateTimeFormat(pattern="dd-mm-yyyy")
     private Date Data_consulta;
 
     @Column(nullable = false)
