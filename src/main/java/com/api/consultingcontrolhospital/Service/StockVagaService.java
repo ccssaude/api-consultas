@@ -5,6 +5,7 @@ import com.api.consultingcontrolhospital.Models.Hospital;
 import com.api.consultingcontrolhospital.Models.Paciente;
 import com.api.consultingcontrolhospital.Repositories.ConsultaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -27,6 +28,7 @@ public class StockVagaService {
         System.out.println(data_marcada);
         return pacientesMarcados;
     }
+
     public Consulta VerificarDisponibilidadeConsulta() throws ParseException {
         final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
