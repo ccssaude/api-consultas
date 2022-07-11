@@ -31,7 +31,6 @@ public class HospitalController {
     public HospitalController(HospitalService hospitalService) {
         this.hospitalService = hospitalService;
     }
-
     @PostMapping
     public ResponseEntity<Object> saveHospital(@RequestBody @Valid HospitalDto hospitalDto) {
         var hospital = new Hospital();

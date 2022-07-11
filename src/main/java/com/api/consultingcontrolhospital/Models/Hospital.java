@@ -10,7 +10,7 @@ public class Hospital implements Serializable {
     private static final long serialVersionUID =1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Integer id;
 
     @Column(nullable = false, length = 100)
     private String nome;
@@ -24,11 +24,11 @@ public class Hospital implements Serializable {
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -46,6 +46,14 @@ public class Hospital implements Serializable {
 
     public void setPacientes(List<Paciente> pacientes) {
         this.pacientes = pacientes;
+    }
+
+    public StockVaga getStockVaga() {
+        return stockVaga;
+    }
+
+    public void setStockVaga(StockVaga stockVaga) {
+        this.stockVaga = stockVaga;
     }
 
     public LocalDateTime getRegistrationDate() {

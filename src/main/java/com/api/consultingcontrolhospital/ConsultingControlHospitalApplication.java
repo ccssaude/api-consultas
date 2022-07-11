@@ -1,13 +1,13 @@
 package com.api.consultingcontrolhospital;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -20,12 +20,12 @@ public class ConsultingControlHospitalApplication {
 	}
 	@GetMapping("/check-date")
 	public String index(){
-		Calendar calendar= Calendar.getInstance();
-		int day = calendar.get(Calendar.DAY_OF_WEEK);
-		if (day==5 || day==6){
-			return "Consulta alocada com sucesso !";
-		}else {
-			return "As marcações apenas podem ser alocadas para quita-feira ou sexta-feira";
-		}
+		Calendar c=Calendar.getInstance();
+		c.set(Calendar.DAY_OF_WEEK,Calendar.THURSDAY);
+		DateFormat df=new SimpleDateFormat("yyyy-MM-dd");
+		c.add(Calendar.DATE,7);
+		System.out.println(df.format(c.getTime()));      // Next fRIDAY
+//		return  Calendar.getInstance().getTime();
+		return "AS datas : " +  Calendar.getInstance().getTime();
 	}
 }

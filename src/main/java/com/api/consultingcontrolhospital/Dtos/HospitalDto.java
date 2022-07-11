@@ -5,7 +5,6 @@ import com.sun.istack.NotNull;
 import javax.validation.constraints.NotBlank;
 
 public class HospitalDto {
-
     @NotBlank(message="Este campo não pode estar em branco.")
     private String nome;
     public String getNome() {

@@ -31,7 +31,6 @@ public class PacienteController {
 }
     @PostMapping
     public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid PacienteDto pacienteDto){
-
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_WEEK);
         if (day==5 || day==6){

@@ -10,10 +10,11 @@ import java.util.UUID;
 
 @Entity
 public class Paciente implements Serializable {
+
     private static final long serialVersionUID =1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Integer id;
     @Column(nullable = false, length = 50)
     private String nome;
 
@@ -29,9 +30,11 @@ public class Paciente implements Serializable {
     @Column(nullable = true, length = 55)
     private LocalDateTime Data_ref;
 
-    @Column(nullable = true, length = 55)
-    @DateTimeFormat(pattern="dd-mm-yyyy")
-    private Date Data_consulta;
+
+//    @DateTimeFormat(pattern="EEE dd/MM/yyyy")
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_consulta", columnDefinition = "DATETIME")
+    private Date data_consulta;
 
     @Column(nullable = false)
     private LocalDateTime registrationDate;
@@ -40,11 +43,20 @@ public class Paciente implements Serializable {
     @JoinColumn(name="hospital_id", nullable = true)
     private Hospital hospital_id;
 
-    public UUID getId() {
+    public Paciente() {
+    }
+
+    public Paciente(Integer id, String nome, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.telefone = telefone;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -89,11 +101,11 @@ public class Paciente implements Serializable {
     }
 
     public Date getData_consulta() {
-        return Data_consulta;
+        return data_consulta;
     }
 
     public void setData_consulta(Date data_consulta) {
-        Data_consulta = data_consulta;
+        this.data_consulta = data_consulta;
     }
 
     public LocalDateTime getRegistrationDate() {

@@ -14,8 +14,6 @@ public class PacienteDto {
     private String motivo_referencia;
     @NotBlank(message="Este campo não pode estar em branco.")
     private String tipo_consulta;
-//    @NotNull
-//    private UUID hospital_id;
 
     public String getNome() {
         return nome;

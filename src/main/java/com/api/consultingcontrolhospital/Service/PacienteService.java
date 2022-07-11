@@ -26,7 +26,7 @@ public PacienteService (PacienteRespository pacienteRespository){
     @Transactional
     public Page<Paciente> findAll(Pageable pageable){
         return pacienteRespository.findAll(pageable);
-}
+     }
     public Optional<Paciente> findById(UUID id){
         return pacienteRespository.findById(id);
     }
