@@ -1,5 +1,6 @@
 package com.api.consultingcontrolhospital.Repositories;
 
+import com.api.consultingcontrolhospital.Models.Consulta;
 import com.api.consultingcontrolhospital.Models.Hospital;
 import com.api.consultingcontrolhospital.Models.Paciente;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public interface ConsultaRepository extends JpaRepository<Paciente, Integer> {

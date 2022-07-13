@@ -21,18 +21,11 @@ public class Paciente implements Serializable {
     @Column(nullable = false, length = 50)
     private String telefone;
 
-    @Column(nullable = false, length = 50)
-    private String motivo_referencia;
-
-    @Column(nullable = true, length = 100)
-    private String tipo_consulta;
-
     @Column(nullable = true, length = 55)
     private LocalDateTime Data_ref;
-
-
-//    @DateTimeFormat(pattern="EEE dd/MM/yyyy")
+    //@DateTimeFormat(pattern="EEE dd/MM/yyyy")
     @Temporal(TemporalType.TIMESTAMP)
+    //if there is bug on jdbc tables generating please comment the line below with DATETIME
     @Column(name = "data_consulta", columnDefinition = "DATETIME")
     private Date data_consulta;
 
@@ -74,22 +67,6 @@ public class Paciente implements Serializable {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public String getMotivo_referencia() {
-        return motivo_referencia;
-    }
-
-    public void setMotivo_referencia(String motivo_referencia) {
-        this.motivo_referencia = motivo_referencia;
-    }
-
-    public String getTipo_consulta() {
-        return tipo_consulta;
-    }
-
-    public void setTipo_consulta(String tipo_consulta) {
-        this.tipo_consulta = tipo_consulta;
     }
 
     public LocalDateTime getData_ref() {

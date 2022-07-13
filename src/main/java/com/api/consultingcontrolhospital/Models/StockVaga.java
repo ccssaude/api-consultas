@@ -1,6 +1,5 @@
 package com.api.consultingcontrolhospital.Models;
 
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;

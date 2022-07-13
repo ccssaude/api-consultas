@@ -24,7 +24,8 @@ public class ConsultingControlHospitalApplication {
 		c.set(Calendar.DAY_OF_WEEK,Calendar.THURSDAY);
 		DateFormat df=new SimpleDateFormat("yyyy-MM-dd");
 		c.add(Calendar.DATE,7);
-		System.out.println(df.format(c.getTime()));      // Next fRIDAY
+		System.out.println(df.format(c.getTime()));
+		// Get Next fRIDAY
 //		return  Calendar.getInstance().getTime();
 		return "AS datas : " +  Calendar.getInstance().getTime();
 	}

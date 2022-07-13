@@ -1,5 +1,6 @@
 package com.api.consultingcontrolhospital.Service;
 
+import com.api.consultingcontrolhospital.Models.Hospital;
 import com.api.consultingcontrolhospital.Models.Paciente;
 import com.api.consultingcontrolhospital.Repositories.PacienteRespository;
 import org.springframework.data.domain.Page;
@@ -23,13 +24,12 @@ public PacienteService (PacienteRespository pacienteRespository){
     public Paciente save(Paciente paciente){
        return pacienteRespository.save(paciente);
 }
-    @Transactional
+@Transactional
     public Page<Paciente> findAll(Pageable pageable){
         return pacienteRespository.findAll(pageable);
      }
-    public Optional<Paciente> findById(UUID id){
+
+    public Optional<Paciente> findById(Integer id){
         return pacienteRespository.findById(id);
     }
-
-
 }

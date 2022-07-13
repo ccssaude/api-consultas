@@ -25,7 +25,7 @@ public class HospitalService {
     public Page<Hospital> findAll(Pageable pageable){
         return hospitalRepository.findAll(pageable);
     }
-    public Optional<Hospital> findById(UUID id){
+    public Optional<Hospital> findById(Integer id){
         return hospitalRepository.findById(id);
     }
 
