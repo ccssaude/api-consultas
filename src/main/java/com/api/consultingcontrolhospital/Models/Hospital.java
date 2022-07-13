@@ -1,5 +1,7 @@
 package com.api.consultingcontrolhospital.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -15,11 +17,9 @@ public class Hospital implements Serializable {
     @Column(nullable = false, length = 100)
     private String nome;
 
-    @OneToMany(mappedBy="hospital_id")
-    private List<Paciente> pacientes;
-
-    @OneToOne(mappedBy = "hospital_id")
-    private StockVaga stockVaga;
+    @OneToMany(mappedBy="hospital_id", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Paciente> pacientes = new ArrayList<>();
 
     @Column(nullable = false)
     private LocalDateTime registrationDate;
@@ -46,14 +46,6 @@ public class Hospital implements Serializable {
 
     public void setPacientes(List<Paciente> pacientes) {
         this.pacientes = pacientes;
-    }
-
-    public StockVaga getStockVaga() {
-        return stockVaga;
-    }
-
-    public void setStockVaga(StockVaga stockVaga) {
-        this.stockVaga = stockVaga;
     }
 
     public LocalDateTime getRegistrationDate() {

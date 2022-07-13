@@ -38,7 +38,7 @@ public class PacienteController {
     public ResponseEntity<Page<Paciente>> getAllPaciente(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC)Pageable pageable){
         return ResponseEntity.status(HttpStatus.OK).body(pacienteService.findAll(pageable));
     }
-    @GetMapping("/pacient{id}")
+    @GetMapping("/pacient/{id}")
     public ResponseEntity<Object> getOnePaciente(@PathVariable(value = "id") Integer id){
         Optional<Paciente> pacienteOptional = pacienteService.findById(id);
         return pacienteOptional.<ResponseEntity<Object>>map(paciente -> ResponseEntity.status(HttpStatus.OK).body(paciente)).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente não encontrado !"));

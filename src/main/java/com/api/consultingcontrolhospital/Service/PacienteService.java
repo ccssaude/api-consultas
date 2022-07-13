@@ -1,6 +1,5 @@
 package com.api.consultingcontrolhospital.Service;
 
-import com.api.consultingcontrolhospital.Models.Hospital;
 import com.api.consultingcontrolhospital.Models.Paciente;
 import com.api.consultingcontrolhospital.Repositories.PacienteRespository;
 import org.springframework.data.domain.Page;
@@ -9,8 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
-import java.util.UUID;
-
 
 @Service
 public class PacienteService {

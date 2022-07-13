@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface StockVagaRepository  extends JpaRepository<Paciente, UUID> {
+public interface StockVagaRepository  extends JpaRepository<Paciente, Integer> {
 //  @Query(value = "SELECT  FROM paciente where hospital_id = hospital_id and data_consulta = data_consulta");
 //    @Param("hospital_id") Integer status,
 //    @Param("data_consulta") String name);

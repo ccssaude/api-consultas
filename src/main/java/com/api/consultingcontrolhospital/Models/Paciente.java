@@ -1,5 +1,6 @@
 package com.api.consultingcontrolhospital.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -32,7 +33,8 @@ public class Paciente implements Serializable {
     @Column(nullable = false)
     private LocalDateTime registrationDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JsonBackReference
     @JoinColumn(name="hospital_id", nullable = true)
     private Hospital hospital_id;
 
@@ -80,7 +82,6 @@ public class Paciente implements Serializable {
     public Date getData_consulta() {
         return data_consulta;
     }
-
     public void setData_consulta(Date data_consulta) {
         this.data_consulta = data_consulta;
     }
