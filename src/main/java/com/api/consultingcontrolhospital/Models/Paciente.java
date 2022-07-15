@@ -1,6 +1,7 @@
 package com.api.consultingcontrolhospital.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -27,7 +28,8 @@ public class Paciente implements Serializable {
     //@DateTimeFormat(pattern="EEE dd/MM/yyyy")
     @Temporal(TemporalType.TIMESTAMP)
     //if there is bug on jdbc tables generating please comment the line below with DATETIME
-    @Column(name = "data_consulta", columnDefinition = "DATETIME")
+    @JsonFormat(pattern="dd-MM-yyyy")
+    //@Column(name = "data_consulta", columnDefinition = "DATETIME")
     private Date data_consulta;
 
     @Column(nullable = false)
